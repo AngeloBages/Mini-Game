@@ -3,6 +3,7 @@ package Menu;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -73,6 +74,14 @@ public class JogoRpg {
 			}
 			
 		}catch(IOException e) {
+			e.printStackTrace();
+			
+		}catch(InputMismatchException e){
+			System.err.println("\n Erro:" + e.toString()
+			+ "\n Digite apenas valores numéricos entre: \n "
+			+ "-2.147.483.648 a 2.147.483.647");
+			
+		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -179,7 +188,7 @@ public class JogoRpg {
 				
 				vida += random.nextInt(5,11);
 				System.out.print(" Você se curou.");
-			    Jogador.pocoes--;
+			    pocoes--;
 			}else {
 				
 				System.out.print(" Você não possui poções. ");

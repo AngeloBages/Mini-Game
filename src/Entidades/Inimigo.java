@@ -22,7 +22,7 @@ public abstract class Inimigo {
     public void infoInimigo() {
 	
 	    System.out.printf("\n               %s",nome);
-	    System.out.printf("\n vida: %s\n",getVida());
+	    System.out.printf("\n vida: %s\n",vida);
     }
     public boolean estaVivo() {
     	return vivo;
